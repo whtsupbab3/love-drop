@@ -3,6 +3,12 @@
   "name": "Love Drop",
   "version": "1.0.0",
   "description": "A cute reminder for your significant one that they are loved.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "love-drop@extension",
+      "strict_min_version": "109.0"
+    }
+  },
   "permissions": ["notifications", "alarms", "storage"],
   "background": {
     "service_worker": "background.js"
@@ -13,6 +19,9 @@
       "matches": ["<all_urls>"]
     }
   ],
+  "browser_specific_settings": {
+    "gecko": { "id": "love-drop@love-drop" }
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

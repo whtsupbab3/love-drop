@@ -55,3 +55,26 @@ Promise.all([
     picEl.onload = spawnHearts;
   }
 });
+
+const settingsBtn = document.getElementById("settings-btn");
+const mainView = document.getElementById("main-view");
+const settingsView = document.getElementById("settings-view");
+const enabledToggle = document.getElementById("enabled-toggle");
+
+let settingsOpen = false;
+
+chrome.storage.sync.get({ enabled: true }, ({ enabled }) => {
+  enabledToggle.checked = enabled;
+});
+
+settingsBtn.addEventListener("click", () => {
+  settingsOpen = !settingsOpen;
+  settingsBtn.textContent = settingsOpen ? "←" : "⚙";
+  mainView.classList.toggle("hidden", settingsOpen);
+  settingsView.classList.toggle("hidden", !settingsOpen);
+});
+
+enabledToggle.addEventListener("change", () => {
+  chrome.storage.sync.set({ enabled: enabledToggle.checked });
+  chrome.runtime.sendMessage({ type: "reschedule" });
+});

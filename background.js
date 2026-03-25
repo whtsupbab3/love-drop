@@ -33,7 +33,6 @@ async function sendNotification() {
     iconUrl: "icons/icon-128.png",
     title: "love drop 💛",
     message,
-    ...(hasPic && { imageUrl: chrome.runtime.getURL(`pics/${pickRandom(pics)}`) }),
     priority: 1,
   });
 }

@@ -10,15 +10,26 @@
       <div class="screen-top">
         <span class="stars">★ ✦ ★</span>
         <span class="title">love drop</span>
-        <span class="stars">★ ✦ ★</span>
+        <button class="settings-btn" id="settings-btn" title="settings">⚙</button>
       </div>
-      <div class="pic-wrap">
-        <img id="pic" alt="" />
-        <div class="scanlines"></div>
-        <div class="hearts-container" id="hearts"></div>
+      <div id="main-view">
+        <div class="pic-wrap">
+          <img id="pic" alt="" />
+          <div class="scanlines"></div>
+          <div class="hearts-container" id="hearts"></div>
+        </div>
+        <div class="msg-wrap">
+          <p id="message"></p>
+        </div>
       </div>
-      <div class="msg-wrap">
-        <p id="message"></p>
+      <div id="settings-view" class="hidden">
+        <div class="settings-row">
+          <span class="settings-label">random pop-ups</span>
+          <label class="toggle">
+            <input type="checkbox" id="enabled-toggle" checked />
+            <span class="toggle-track"></span>
+          </label>
+        </div>
       </div>
       <div class="screen-bottom">♡ ♡ ♡</div>
     </div>
